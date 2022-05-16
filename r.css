@@ -1,0 +1,270 @@
+/* main */
+
+:root {
+	--color-inactive: navy;
+	--color-inactive-50: rgba(0, 0, 128, 0.5);
+	--color-active: dodgerblue;
+	--color-pop: orange;
+	--color-pop-50: rgba(255, 165, 0, 0.5);
+	--color-emphasis: rgba(255, 255, 128, 1);
+
+	--color-inactive: PaleVioletRed;
+	--color-active: Pink;
+	--color-emphasis: HotPink;
+
+	--color-inactive: MediumAquamarine;
+	--color-inactive-50: rgba(102, 205, 170, 0.5);
+	--color-active: LightCyan;
+	--color-emphasis: Khaki;
+
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, midnightblue 0%, black 25%, black 75%, darkslateblue 100%);
+	background-attachment: fixed;
+	color: white;
+	font-family: "BIZ UDPGothic", "Trebuchet MS", sans-serif;
+	padding: 0 5vw;
+}
+
+main, header, footer,
+blockquote:hover, .gallery figure:hover, p:hover, li:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+main, footer, blockquote {
+	margin: 1em 0;
+	padding: 0 1em;
+}
+
+/* header, footer */
+
+header {
+	padding: 1em;
+	position: relative;
+}
+
+header, footer {
+	text-align: right;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+nav {
+	width: 100%;
+}
+
+nav ul {
+	list-style: none;
+	margin: 2em 0 -1em 0;
+	padding: 0;
+	display: flex;
+	direction: rtl;
+}
+
+nav li, nav li:hover {
+	padding: 0.25em 1em 0.25em 1em;
+	background: var(--color-inactive);
+	position: relative;
+}
+
+nav li + li {
+	margin-inline-start: 1em;
+}
+
+nav li:before {
+	content: "";
+	display: block;
+	/* stretch horizontally */
+	position: absolute;
+	right: 0;
+	left: 0;
+	/* move above */
+	top: -0.5em;
+	/* trapezoid shape */
+	border-bottom: 0.5em solid var(--color-inactive-50);
+	border-left: 0.5em solid transparent;
+	border-right: 0.5em solid transparent;
+}
+
+nav li:hover:before {
+	border-bottom-color: var(--color-active);
+}
+
+nav li:before, nav li:hover:before {
+	transition: border-bottom-color 0.25s;
+}
+
+nav li[disabled] {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+/* headers */
+
+h2 {
+	border-left: 0.5em solid var(--color-inactive);
+	padding-left: 0.5em;
+	border-top: 0.2em solid transparent;
+	border-bottom: 0.2em solid transparent;
+	position: relative;
+}
+
+h2:hover {
+	border-left-color: var(--color-pop);
+}
+
+h2 {
+	transition: border-left-color 0.5s 0s;
+}
+
+h2:hover {
+	transition: border-left-color 0.5s 0.125s;
+}
+
+h2:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 100%;
+	border-bottom: 0.2em solid var(--color-inactive);
+	/* allow highlighting and do not overlap text */
+	z-index: -1;
+}
+
+h2:hover:after {
+	/* make :after extend to width of h2 */
+	left: 0%;
+	border-bottom-color: var(--color-pop);
+}
+
+h2:after, h2:hover:after {
+	transition: left 0.25s, border-bottom-color 0.25s;
+}
+
+/* a */
+
+a {
+	color: var(--color-inactive);
+}
+
+a:hover {
+	color: var(--color-active);
+}
+
+a:visited {
+	color: purple;
+}
+
+/* definition list */
+
+dt {
+	color: var(--color-active);
+	font-weight: bold;
+}
+
+/* blockquote */
+
+blockquote {
+	border-left: 0.2em solid var(--color-inactive);
+	font-family: serif;
+}
+
+blockquote:hover {
+	border-color: var(--color-pop);
+}
+
+blockquote, blockquote:hover {
+	transition: border-color 0.5s;
+}
+
+blockquote p {
+	font-size: 110%;
+}
+
+blockquote footer {
+	text-align: right;
+	background: initial;
+}
+
+/* gallery */
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.gallery figure {
+	flex-grow: 1;
+	margin: 0;
+	padding: 1em;
+}
+
+.gallery img {
+	max-width: 48px;
+}
+
+/* return to top */
+
+#return-to-top {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+#return-to-top a {
+	display: inline-block;
+	background: no-repeat center/50px url("https://upload.wikimedia.org/wikipedia/commons/f/f7/Oxygen480-actions-go-top.svg");
+	height: 50px;
+	width: 50px;
+}
+
+#return-to-top a:hover {
+	height: 70px;
+}
+
+#return-to-top a, #return-to-top a:hover {
+	transition: height 0.1s;
+}
+
+/* misc */
+
+code {
+	background: rgba(0, 0, 0, 0.8);
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.hover-rotate:hover {
+	display: inline-block; /* https://stackoverflow.com/a/4920080 */
+	transform: rotate(360deg);
+}
+
+.hover-rotate, .hover-rotate:hover {
+	transition: transform 1s;
+}
+
+.skill-level {
+	font-style: italic;
+	color: var(--color-emphasis);
+}
+
+strong {
+	color: var(--color-emphasis);
+}
