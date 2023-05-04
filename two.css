@@ -1,0 +1,136 @@
+:root {
+	--color-light: rgba(255, 255, 255, 0.1);
+	--color-white: rgba(255, 255, 255, 0.9);
+}
+
+/* grid */
+
+body {
+	display: grid;
+	grid-template:
+		"t t"
+		"h m"
+		"f m"
+		"T m";
+}
+
+#top {
+	grid-area: t;
+}
+
+header {
+	grid-area: h;
+}
+
+main {
+	grid-area: m;
+}
+
+footer {
+	grid-area: f;
+}
+
+#return-to-top {
+	grid-area: T;
+}
+
+/* main */
+
+body {
+	background: navy;
+	color: mintcream;
+	font-family: sans-serif;
+	font-size: 9pt;
+	width: 768px;
+}
+
+header {
+	background: var(--color-white);
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Koelg.jpg/327px-Koelg.jpg');
+	color: black;
+	width: 200px;
+}
+
+h1 a {
+	text-decoration: none;
+	color: silver;
+	text-shadow:
+		-2px 2px 2px rgba(0, 0, 0, 0.5),
+		-1px 1px 2px rgba(0, 0, 0, 0.5),
+		2px -2px 0 rgba(255, 255, 255, 0.9),
+		1px -1px 0 rgba(255, 255, 255, 0.9);
+}
+
+nav li:not([disabled]):after {
+	content: ' 🆕';
+	font-size: 16px;
+	filter: hue-rotate(180deg) saturate(170%);
+}
+
+nav li[disabled]:after {
+	content: ' 🚧';
+	font-size: 16px;
+	animation-duration: 2s;
+	animation-name: 'construction';
+	animation-iteration-count: infinite;
+}
+
+@keyframes construction {
+	50% {
+		content: ' 🔨';
+	}
+}
+
+body > footer {
+	background: var(--color-light);
+	text-align: center;
+	width: 200px;
+}
+
+body > footer:after {
+	white-space: pre-wrap;
+	content: 'Marble texture: Koelg.jpg / ©\ Lysippos / Wikimedia Commons / CC-BY-SA-2.0-DE\a\a Best viewed in Firefox 100+,\a in 1024 × 768 resolution.\a\a You are the 5th visitor.\a\a There are 1 visitor(s) online now.';
+}
+
+#return-to-top {
+	text-align: center;
+	width: 200px;
+	align-self: end;
+}
+
+#return-to-top a {
+	text-decoration: none;
+}
+
+#return-to-top a:before {
+	content: '🔝';
+	font-size: 16px;
+	background: var(--color-white);
+}
+
+main a {
+	color: cyan;
+}
+
+h2 {
+	background: darkred;
+	padding: 0.5em;
+}
+
+.skill-level {
+	color: yellow;
+}
+
+blockquote {
+	background: var(--color-white);
+	color: black;
+	padding: 1em 0;
+	font-family: serif;
+	border: 2px dotted indigo;
+	outline: 1px solid var(--color-white);
+}
+
+blockquote * {
+	padding: 0;
+	margin: 0;
+}

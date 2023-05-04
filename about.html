@@ -2,9 +2,13 @@
 <html lang="en">
 	<head>
 		<title>Home</title>
-		<meta name="robots" content="noindex" />
-		<meta name="generator" content="Microsoft FrontPage 2.0" /> <!--of course-->
-		<link type="text/css" href="r.css" rel="stylesheet" />
+		<meta name="robots" content="noindex">
+		<meta name="generator" content="Microsoft FrontPage 2.0"> <!--of course-->
+		<link type="text/css" href="one.css" rel="alternate stylesheet" title="One">
+		<link type="text/css" href="two.css" rel="alternate stylesheet" title="Two">
+		<link type="text/css" href="bitgub.css" rel="alternate stylesheet" title="BitGub">
+		<link type="text/css" href="millenium.css" rel="stylesheet" title="Millenium">
+		<script src="theme.js"></script>
 	</head>
 
 	<body>
@@ -14,6 +18,11 @@
 				<a href="index.html">You are Home.</a>
 			</h1>
 			<nav>
+				<div class="container-selector-themes">
+					<label for="theme">Theme</label>
+					<select name="theme" id="selector-themes" onload="">
+					</select>
+				</div>
 				<ul>
 					<li>
 						<a href="mailto:ejxc@uw.edu">E-mail</a>
@@ -21,13 +30,13 @@
 					<li>
 						<a href="https://github.com/ajxc">GitHub</a>
 					</li>
-					<li disabled="true">
+					<li disabled>
 						<a href="#">LinkedIn</a>
 					</li>
-					<li disabled="true">
+					<li disabled>
 						<a href="#">Twitter</a>
 					</li>
-					<li disabled="true">
+					<li disabled>
 						<a href="#">List of projects</a>
 					</li>
 				</ul>
@@ -44,12 +53,13 @@
 			<section>
 				<h2>Volunteer work</h2>
 				<ul>
-					<li>Digitizing of historical works important to linguistics and language.</li>
+					<li>Digitization of historical works important to linguistics and language.</li>
 					<li>Open documentation of various languages.</li>
 					<li><a href="https://en.wikipedia.org/wiki/Ideographic_Research_Group"><abbr title="Ideographic Research Group">IRG</abbr></a> individual contributor.</li>
-					<li>Contribution to <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'s map coverage of Japan and China.</li>
+					<li>Contribution to <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'s coverage of various places.</li>
 					<li>Contribution to Wikipedia's coverage of various linguistic topics.</li>
-					<li>Free software movement.</li>
+					<li><abbr>FOSS</abbr> (free and open-source software).</li>
+					<li>Translation.</li>
 				</ul>
 			</section>
 
@@ -67,11 +77,11 @@
 					<li>
 						<b>Web development:</b>
 						<ul>
-							<li>HTML</li>
-							<li>CSS</li>
+							<li><abbr>HTML</abbr></li>
+							<li><abbr>CSS</abbr></li>
 							<li>JavaScript <span class="skill-level">(intermediate)</span>: vanilla, jQuery</li>
 							<li>PHP <span class="skill-level">(basic)</span></li>
-							<li>SQL <span class="skill-level">(basic)</span>L</li>
+							<li><abbr>SQL</abbr> <span class="skill-level">(basic)</span></li>
 						</ul>
 					</li>
 					<li>
@@ -95,18 +105,24 @@
 						</ul>
 					</li>
 					<li>
-						<b>Other</b></li>
+						<b>Other software:</b>
 						<ul>
 							<li>Windows; Linux</li>
 							<li><a href="https://en.wikipedia.org/wiki/Git">Git</a>; <a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>; <a href="https://en.wikipedia.org/wiki/GitLab">GitLab</a></li>
 							<li>Unicode</li>
 							<li><a href="https://en.wikipedia.org/wiki/MediaWiki">MediaWiki</a> (Wikipedia engine)</li>
 							<li><a href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
+						</ul>
+					</li>
+					<li>
+						<b>Other:</b>
+						<ul>
 							<li>Editing and proofreading</li>
 							<li><strong>I am always open to learning new skills!</strong></li>
 						</ul>
+					</li>
 					<li>
-						<b>Languages</b>:
+						<b>Languages:</b>
 						<ul>
 							<li>English <span class="skill-level">(native)</span></li>
 							<li>Japanese <span class="skill-level">(C1)</span></li>
@@ -116,8 +132,9 @@
 							<li>Teochew Chinese <span class="skill-level">(A1)</span></li>
 							<li>Hokkien Chinese <span class="skill-level">(A1)</span></li>
 							<li>Spanish <span class="skill-level">(A1)</span></li>
+							<li>Indonesian <span class="skill-level">(pre-A1)</span></li>
+							<li>Malay <span class="skill-level">(pre-A1)</span></li>
 							<li>Romanian <span class="skill-level">(pre-A1)</span></li>
-							<li>Catalonian <span class="skill-level">(pre-A1)</span></li>
 						</ul>
 					</li>
 				</ul>
@@ -135,7 +152,8 @@
 			<section>
 				<h2>Past positions / experience</h2>
 				<ul>
-					<li>Currently private.</li>
+					<li>20**&ndash;current: various volunteer work</li>
+					<li>Other items are currently private.</li>
 				</ul>
 			</section>
 		</main>
@@ -143,11 +161,11 @@
 			<blockquote lang="lzh">
 				<p>今夕何夕兮！</p>
 				<footer>
-					<cite>《<a href="https://zh.wikipedia.org/wiki/越人歌">越人歌</a>》</cite>
+					<cite>《<a href="https://books.google.com/books?id=EHu9CXhak1gC&pg=RA2-PA7&dq=今夕何夕兮">越人歌</a>》</cite>
 				</footer>
 			</blockquote>
-			<p>Last updated in February 2022.</p>
-			<p>&copy; 2020&ndash; Avery Chan</p>
+			<p>Last updated in 2023.</p>
+			<p>&copy; Avery Chan</p>
 		</footer>
 		<div id="return-to-top">
 			<a href="#top" title="Return to top">

@@ -1,0 +1,169 @@
+:root {
+	--color-back: MediumSlateBlue;
+	--color-light: Lavender;
+	--color-dark: SlateBlue;
+	--color-pop: White;
+
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--color-back);
+	color: var(--color-light);
+	font-family: 'tw cen mt', sans-serif;
+}
+
+h1 {
+	margin: 0;
+	color: var(--color-dark);
+	position: fixed;
+	font-size: 10em;
+	z-index: -1;
+	bottom: -0.25em;
+	right: -1em;
+	white-space: nowrap;
+}
+
+h1 a {
+	color: inherit;
+}
+
+.container-selector-themes {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-pop);
+	transition: 1s;
+}
+
+a:after {
+	content: '↗';
+	vertical-align: super;
+	font-size: 50%;
+}
+
+a:hover {
+	text-shadow: 0.5em 0.5em 0.1em white;
+	transition: 0.5s;
+	display: inline-block;
+	transform: rotate(5deg) scale(110%);
+}
+
+nav ul {
+	text-align: right;
+	list-style: none;
+	height: 7em;
+	width: 20em;
+	position: fixed;
+	margin: 0;
+	top: 1em;
+	right: 1em;
+	opacity: 0.5;
+}
+
+nav ul:hover {
+	z-index: 10;
+	opacity: 1;
+}
+
+nav ul:before {
+	content: '';
+	background-color: var(--color-dark);
+	float: right;
+	height: 100%;
+	width: 7em;
+	border-radius: 100% 0 0 0;
+	shape-outside: border-box;
+}
+
+nav li {
+	/* 100% / 5 = 20% */
+	height: 20%;
+}
+
+nav li[disabled] {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+nav li a {
+	border-radius: 50%;
+}
+
+nav li a:hover {
+	background: var(--color-light);
+	border-radius: 50%;
+	color: var(--color-dark);
+	padding: 0.5em;
+}
+
+main {
+	max-width: 40em;
+	padding: 1em 5em;
+	margin: auto;
+	/* */
+	/* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 3em);
+}
+
+section {
+	height: 2em;
+	transition: 1s;
+	/* */
+	flex: 0;
+}
+
+section:hover {
+	/*height: auto;*/
+	background: var(--color-dark);
+	/* */
+	/* https://stackoverflow.com/a/17261208 */
+	position: relative;
+	z-index: 2;
+	/* */
+	flex: 1;
+}
+
+section h2 {
+	position: relative;
+	left: -2em;
+	margin: 0;
+	transition: 1s;
+	text-shadow: 0 0 var(--color-dark);
+}
+
+section:hover h2 {
+	left: -1em;
+	text-shadow: -2em 0 var(--color-dark);
+}
+
+section h2 ~ * {
+	opacity: 0;
+	pointer-events: none;
+	transition: 1s;
+}
+
+section:hover h2 ~ * {
+	opacity: 1;
+	pointer-events: auto;
+	/* ugly hack for overflow */
+	background: var(--color-dark);
+}
+
+section p {
+	padding: 0 1em;
+}
+
+footer {
+	text-align: center;
+}
+
+#return-to-top {
+	display: none;
+}
