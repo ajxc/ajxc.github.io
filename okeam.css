@@ -51,6 +51,10 @@ h2 {
 	color: khaki;
 }
 
+nav li[disabled] {
+	text-decoration: line-through;
+}
+
 a {
 	color: yellow;
 }
