@@ -19,7 +19,7 @@ h1 {
 	position: fixed;
 	font-size: 10em;
 	z-index: -1;
-	bottom: -0.25em;
+	bottom: -0.4em;
 	right: -1em;
 	white-space: nowrap;
 }
@@ -47,17 +47,26 @@ a:after {
 }
 
 a:hover {
-	text-shadow: 0.5em 0.5em 0.1em white;
+	/*text-shadow: 1px 1px var(--color-dark), 0.75em 0.75em 0.1em var(--color-pop);*/
+	text-shadow: 0.75em 0.75em 0.1em var(--color-pop);
 	transition: 0.5s;
 	display: inline-block;
-	transform: rotate(5deg) scale(110%);
+	transform: rotate(-1deg) scale(105%);
+}
+
+a:hover:after {
+	display: inline-block;
+	transform: rotate(360deg);
+	transition: 0.5s;
 }
 
 nav ul {
+	padding: 0;
 	text-align: right;
 	list-style: none;
 	height: 7em;
-	width: 20em;
+	/* width: min-content does not work, unfortunately */
+	width: 11em;
 	position: fixed;
 	margin: 0;
 	top: 1em;
@@ -81,7 +90,7 @@ nav ul:before {
 }
 
 nav li {
-	/* 100% / 5 = 20% */
+	/* 100% / 5 items = 20% */
 	height: 20%;
 }
 
@@ -103,7 +112,7 @@ nav li a:hover {
 
 main {
 	max-width: 40em;
-	padding: 1em 5em;
+	padding: 1em 4em;
 	margin: auto;
 	/* */
 	/* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
@@ -114,19 +123,23 @@ main {
 
 section {
 	height: 2em;
+	padding: 0 1em;
 	transition: 1s;
 	/* */
+	/* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
 	flex: 0;
 }
 
 section:hover {
+	/* !! cannot transition smoothly with height: auto !! */
 	/*height: auto;*/
 	background: var(--color-dark);
-	/* */
-	/* https://stackoverflow.com/a/17261208 */
 	position: relative;
 	z-index: 2;
+	/* hide nav */
+	/*box-shadow: 1em -1em var(--color-back);*/
 	/* */
+	/* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
 	flex: 1;
 }
 
@@ -135,7 +148,7 @@ section h2 {
 	left: -2em;
 	margin: 0;
 	transition: 1s;
-	text-shadow: 0 0 var(--color-dark);
+	text-shadow: 0 0 var(--color-back);
 }
 
 section:hover h2 {
@@ -147,17 +160,38 @@ section h2 ~ * {
 	opacity: 0;
 	pointer-events: none;
 	transition: 1s;
+	/* ugly hack for when text overflows */
+	background: var(--color-back);
+	outline: 0em solid var(--color-back);
+	/* produces an interesting but quickly annoying shimmering effect */
+	/*outline: 0em solid var(--color-light);*/
 }
 
 section:hover h2 ~ * {
 	opacity: 1;
 	pointer-events: auto;
-	/* ugly hack for overflow */
+	/* ugly hack for when text overflows */
 	background: var(--color-dark);
+	outline: 1em solid var(--color-dark);
+}
+
+section p, section ul {
+	/*font-family: 'biz udpgothic', sans-serif;*/
 }
 
 section p {
+	text-align: justify;
+	text-justify: inter-character;
+	hyphens: auto;
+}
+
+section ul {
 	padding: 0 1em;
+}
+
+.skill-level {
+	font-size: 80%;
+	opacity: 0.5;
 }
 
 footer {

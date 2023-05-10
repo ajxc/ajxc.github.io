@@ -27,6 +27,7 @@ body {
 	color: white;
 	font-family: "BIZ UDPGothic", "Trebuchet MS", sans-serif;
 	padding: 0 5vw;
+	line-height: 1.25em;
 }
 
 main, header, footer,
@@ -122,6 +123,7 @@ h2 {
 	border-top: 0.2em solid transparent;
 	border-bottom: 0.2em solid transparent;
 	position: relative;
+	line-height: 1.25em;
 }
 
 h2:hover {
@@ -245,6 +247,12 @@ blockquote footer {
 }
 
 /* misc */
+
+p {
+	text-align: justify;
+	text-justify: inter-character;
+	hyphens: auto;
+}
 
 code {
 	background: rgba(0, 0, 0, 0.8);

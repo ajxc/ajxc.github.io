@@ -1,0 +1,8 @@
+@import url('shogekiha.css');
+
+:root {
+	--color-back: PaleVioletRed;
+	--color-light: Snow;
+	--color-dark: MediumVioletRed;
+	--color-pop: White;
+}

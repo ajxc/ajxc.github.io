@@ -57,12 +57,6 @@ h1:after {
 	height: 1em;
 	width: 1em;
 	float: right;
-	/* */
-	content: '📍';
-	overflow: hidden;
-	line-height: 1em;
-	background: #ddd;
-	border-radius: 100%;
 }
 
 nav {
@@ -112,7 +106,11 @@ section:before {
 	width: 1em;
 	position: absolute;
 	left: -1.5em;
-	/* */
+	/* optical correction */
+	top: -0.07em;
+}
+
+section:before, h1:after {
 	content: '📍';
 	overflow: hidden;
 	line-height: 1em;

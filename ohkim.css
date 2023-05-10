@@ -1,0 +1,60 @@
+body {
+	background: black;
+	color: lightyellow;
+	font-family: serif;
+	width: 768px;
+	margin: 1em auto;
+	line-height: 1.25em;
+}
+
+h1 {
+	color: gold;
+	text-shadow: 1px -1px yellow, 2px -2px yellow;
+	animation-name: 'threedspin';
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	display: inline-block;
+	animation-timing-function: steps(50, end);
+	transform-style: preserve-3d;
+	perspective: 5cm;
+}
+
+h1:before, h1:after {
+	content: 'You are Home.';
+	color: olive;
+	position: absolute;
+	left: 0;
+}
+
+h1:before {
+	transform: translateZ(-0.1em);
+}
+
+h1:after {
+	transform: translateZ(-0.2em);
+}
+
+@keyframes threedspin {
+	0% {
+		transform: rotatey(0deg);
+	}
+	100% {
+		transform: rotatey(360deg);
+	}
+}
+
+h1 a {
+	color: inherit;
+}
+
+h2 {
+	color: khaki;
+}
+
+a {
+	color: yellow;
+}
+
+strong {
+	color: khaki;
+}
